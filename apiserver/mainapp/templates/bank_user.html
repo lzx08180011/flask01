@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank_User</title>
+</head>
+<body>
+    <li>url:{{ request.url }}</li>
+    <li>base_url:{{ request.base_url }}</li>
+    <li>host:{{request.host_url}}</li>
+    <li>path:{{request.path}}</li>
+    <li>客户端ip:{{request.remote_addr}}</li>
+    <li>请求头:{{request.headers}}</li>
+    <li>Cookies:{{request.cookies}}</li>
+</body>
+</html>

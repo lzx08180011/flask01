@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		#clock{
+			width: 300px;
+			height: 50px;
+			color: white;
+			background-color: #0000FF;
+			text-align: center;
+			/* 垂直居中 */
+			line-height: 50px;
+			margin: 0 auto;
+			float: right;
+		}
+	</style>
+	<body>
+		<div id="clock"></div>
+		<script>
+			// document.write('<table>')
+			// for (let i = 1 ; i <= 9 ; i += 1){
+			// 	document.write('<tr>')
+			// 	for(let j = 1 ; j <= i ; j += 1){
+			// 		// $times; 乘号   &nbsp; 空格
+			// 		document.write('<td>')
+			// 		document.write(`${j}&times;${i}=${j * i}&nbsp;`)
+			// 		document.write('</td>')
+			// 	}
+			// 	// 换行符
+			// 	// document.write(`<br>`)
+			// 	document.write('</tr>')
+			// }
+			const clock = document.getElementById('clock')
+			const weekdays = ['日' , '一' , '二' , '三' , '四' , '五' , '六']
+			function clockShow(){
+				let now = new Date()
+				let year = now.getFullYear()
+				let month = now.getMonth() + 1
+				let date = now.getDate()
+				let hour = now.getHours()
+				let min = now.getMinutes()
+				let sec = now.getSeconds()
+				let day = now.getDay()
+				let fullStr = `${year}年${month}月${date}日 ${hour}:${min}:${sec} 星期${weekdays[day]}`
+				// alert(fullStr)
+				clock.textContent = fullStr
+			}
+			clockShow()
+			window.setInterval(clockShow, 1000)
+		</script>
+	</body>
+</html>

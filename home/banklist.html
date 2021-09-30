@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>银行信息页面</title>
+</head>
+<script src="js/vue.min.js"></script>
+<body>
+    <div id="bank-app">
+        <table width="800">
+            <thead>
+                <th>编号</th>
+                <th>卡号</th>
+                <th>姓名</th>
+                <th width="200">操作</th>
+            </thead>
+            <tbody>
+                <tr v-for="item in banks">
+                    <td>{{item.id}}</td>
+                    <td>{{item.card}}</td>
+                    <td>{{item.name}}</td>
+                    <td> <a :href="'http://localhost:5000/delbank?id=' + item.id">删除</a> </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="js/BankApp.js"></script>
+    </div>
+
+</body>
+</html>
